@@ -4,44 +4,51 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const About = () => {
   const skills = [
-    { name: 'React', level: 95, color: 'bg-blue-500' },
-    { name: 'TypeScript', level: 90, color: 'bg-blue-600' },
+    { name: 'C# / .NET', level: 95, color: 'bg-purple-500' },
+    { name: 'React.js', level: 90, color: 'bg-blue-500' },
     { name: 'Node.js', level: 85, color: 'bg-green-500' },
     { name: 'Python', level: 80, color: 'bg-yellow-500' },
-    { name: 'PostgreSQL', level: 85, color: 'bg-indigo-500' },
-    { name: 'AWS', level: 75, color: 'bg-orange-500' },
+    { name: 'Azure', level: 85, color: 'bg-blue-600' },
+    { name: 'SQL Server', level: 90, color: 'bg-orange-500' },
+  ];
+
+  const techStack = [
+    { category: 'Languages', items: ['C#', 'Java', 'Python', 'JavaScript', 'TypeScript'] },
+    { category: 'Frameworks', items: ['ASP.NET Core', 'React.js', 'Angular', 'Node.js', 'MVC'] },
+    { category: 'Databases', items: ['SQL Server', 'PostgreSQL', 'MongoDB', 'T-SQL'] },
+    { category: 'Tools & Cloud', items: ['Azure', 'Docker', 'Git', 'CI/CD', 'Postman'] },
   ];
 
   const highlights = [
     {
       icon: Code,
-      title: 'Clean Code',
-      description: 'Writing maintainable, scalable code following best practices',
+      title: 'Full-Stack Development',
+      description: 'Expert in building scalable web applications using modern frameworks',
     },
     {
       icon: Globe,
-      title: 'Web Technologies',
-      description: 'Expertise in modern frameworks and libraries',
+      title: 'Cloud Architecture',
+      description: 'Experienced with Azure services and containerization with Docker',
     },
     {
       icon: Database,
       title: 'Database Design',
-      description: 'Designing efficient and scalable database architectures',
+      description: 'Proficient in designing efficient database systems and optimization',
     },
     {
       icon: Smartphone,
-      title: 'Responsive Design',
-      description: 'Creating seamless experiences across all devices',
+      title: 'API Development',
+      description: 'Building robust RESTful and GraphQL APIs with clean architecture',
     },
     {
       icon: Zap,
-      title: 'Performance',
-      description: 'Optimizing applications for speed and efficiency',
+      title: 'Performance Optimization',
+      description: 'Improving application performance and reducing load times significantly',
     },
     {
       icon: Users,
-      title: 'Collaboration',
-      description: 'Working effectively in cross-functional teams',
+      title: 'Team Leadership',
+      description: 'Mentoring junior developers and collaborating in Agile environments',
     },
   ];
 
@@ -53,8 +60,8 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionate developer with 5+ years of experience building robust web applications
-            and leading development teams to deliver exceptional user experiences.
+            Software Engineer with 4+ years of experience building robust applications
+            and leading development teams. Currently pursuing Master's in Computer Science at UCF.
           </p>
         </div>
 
@@ -64,26 +71,27 @@ const About = () => {
             <div className="animate-slide-in-left">
               <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                I started my coding journey during college, fascinated by the power of technology 
-                to solve real-world problems. What began as curiosity has evolved into a passion 
-                for creating innovative solutions that impact millions of users.
+                Currently pursuing my Master's in Computer Science at the University of Central Florida 
+                with a stellar 3.875 GPA, I bring a unique blend of academic excellence and practical 
+                industry experience to every project I undertake.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Over the years, I've had the privilege of working with startups and established 
-                companies, building everything from MVPs to enterprise-scale applications. 
-                I thrive in collaborative environments where I can mentor junior developers 
-                while continuously learning new technologies.
+                My professional journey includes significant contributions at Techigai, where I successfully 
+                migrated legacy systems to modern .NET Core and Angular frameworks, achieving remarkable 
+                40% improvements in load times. I've built scalable APIs, mentored junior developers, 
+                and automated critical business processes.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                When I'm not coding, you'll find me contributing to open-source projects, 
-                writing technical blogs, or exploring the latest trends in web development.
+                I'm passionate about clean architecture, performance optimization, and creating 
+                innovative solutions that make a real difference. When I'm not coding, I'm exploring 
+                new technologies and contributing to open-source projects.
               </p>
             </div>
           </div>
 
           {/* Skills Progress */}
           <div className="animate-slide-in-right">
-            <h3 className="text-2xl font-semibold mb-6">Technical Skills</h3>
+            <h3 className="text-2xl font-semibold mb-6">Core Competencies</h3>
             <div className="space-y-4">
               {skills.map((skill) => (
                 <div key={skill.name} className="space-y-2">
@@ -100,6 +108,30 @@ const About = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Tech Stack */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold mb-8 text-center">Technical Stack</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {techStack.map((category) => (
+              <Card key={category.category} className="card-hover bg-card/50 backdrop-blur">
+                <CardContent className="p-6">
+                  <h4 className="font-semibold mb-3 text-primary">{category.category}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {category.items.map((item) => (
+                      <span
+                        key={item}
+                        className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
 

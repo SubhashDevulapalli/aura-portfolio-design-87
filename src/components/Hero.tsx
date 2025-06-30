@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const fullText = "Full Stack Developer";
+  const fullText = "Software Engineer";
 
   useEffect(() => {
     if (currentIndex < fullText.length) {
@@ -23,10 +23,10 @@ const Hero = () => {
   };
 
   const downloadResume = () => {
-    // Create a mock PDF download - in real implementation, you'd have an actual PDF file
+    // Create a mock PDF download - replace with actual resume file
     const link = document.createElement('a');
     link.href = '#'; // Replace with actual PDF URL
-    link.download = 'John_Developer_Resume.pdf';
+    link.download = 'Subhash_Devulapalli_Resume.pdf';
     link.click();
   };
 
@@ -40,8 +40,8 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="mb-8">
             <img
-              src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=150&h=150&fit=crop&crop=face"
-              alt="John Developer"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+              alt="Subhash Devulapalli"
               className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-primary/20 shadow-lg hover-scale"
               loading="eager"
             />
@@ -50,7 +50,7 @@ const Hero = () => {
           {/* Main heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
             Hi, I'm{' '}
-            <span className="gradient-text">John Developer</span>
+            <span className="gradient-text">Subhash Devulapalli</span>
           </h1>
 
           {/* Typing animation */}
@@ -62,8 +62,8 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
-            I craft exceptional digital experiences through clean code and innovative solutions. 
-            Passionate about building scalable applications that make a difference.
+            Passionate software engineer with expertise in full-stack development, cloud technologies, and scalable system architecture. 
+            Currently pursuing Master's in Computer Science at UCF with a focus on building innovative solutions.
           </p>
 
           {/* CTA Buttons */}
@@ -91,9 +91,9 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6">
             {[
-              { icon: Github, href: 'https://github.com', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-              { icon: Mail, href: 'mailto:john@example.com', label: 'Email' },
+              { icon: Github, href: 'https://github.com/subhash-devulapalli', label: 'GitHub' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/subhash-devulapalli', label: 'LinkedIn' },
+              { icon: Mail, href: 'mailto:subhash.devulapalli14@gmail.com', label: 'Email' },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

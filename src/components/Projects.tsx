@@ -12,66 +12,70 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      summary: 'Full-stack e-commerce solution with modern UI',
-      description: 'Built a comprehensive e-commerce platform using React, Node.js, and PostgreSQL. Features include user authentication, product catalog, shopping cart, payment integration with Stripe, and admin dashboard for inventory management.',
+      title: 'Event Management Portal',
+      summary: 'Full-stack event management system with SSO and notifications',
+      description: 'Built a comprehensive event management portal using React.js, .NET Core, and MySQL. Features include SSO login integration, real-time toast and email notifications, and a GraphQL API for efficient data fetching. Successfully reduced user onboarding time by 30% through streamlined UX design and automated workflows.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'AWS'],
+      technologies: ['React.js', '.NET Core', 'MySQL', 'GraphQL', 'SSO'],
       githubUrl: 'https://github.com',
       liveUrl: 'https://example.com',
       responsibilities: [
-        'Designed and implemented RESTful APIs',
-        'Integrated Stripe payment processing',
-        'Built responsive React components',
-        'Optimized database queries for performance'
+        'Designed and implemented full-stack architecture using .NET Core and React.js',
+        'Integrated SSO authentication for seamless user experience',
+        'Built GraphQL API for efficient data fetching and real-time updates',
+        'Implemented toast and email notification systems',
+        'Reduced user onboarding time by 30% through UX optimization'
       ]
     },
     {
       id: 2,
-      title: 'Task Management App',
-      summary: 'Collaborative project management tool',
-      description: 'Developed a real-time collaborative task management application with drag-and-drop functionality, team collaboration features, and comprehensive reporting. Built with React, Express.js, and Socket.io for real-time updates.',
-      image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=600&h=400&fit=crop',
-      technologies: ['React', 'Express.js', 'MongoDB', 'Socket.io', 'JWT'],
+      title: 'Food Tracker Microservices',
+      summary: 'Microservices architecture for meal tracking and recommendations',
+      description: 'Developed a scalable food tracking application using Node.js, Angular, and MongoDB with Docker containerization. Built microservices architecture for meal tracking, nutritional analysis, and personalized recommendations. Achieved 30% improvement in response time through efficient service design and database optimization.',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop',
+      technologies: ['Node.js', 'Angular', 'MongoDB', 'Docker', 'Microservices'],
       githubUrl: 'https://github.com',
       liveUrl: 'https://example.com',
       responsibilities: [
-        'Implemented real-time collaboration with Socket.io',
-        'Created drag-and-drop interface with React DnD',
-        'Built authentication system with JWT',
-        'Designed responsive mobile-first UI'
+        'Architected microservices using Node.js and Docker containers',
+        'Built Angular frontend with responsive design and real-time updates',
+        'Implemented MongoDB for efficient data storage and retrieval',
+        'Created recommendation engine for personalized meal suggestions',
+        'Achieved 30% response time improvement through optimization'
       ]
     },
     {
       id: 3,
-      title: 'Analytics Dashboard',
-      summary: 'Data visualization and reporting platform',
-      description: 'Created an interactive analytics dashboard for business intelligence with customizable charts, real-time data updates, and export functionality. Used D3.js for custom visualizations and implemented efficient data caching.',
+      title: 'Legacy System Migration',
+      summary: 'Migrated legacy systems to modern .NET Core and Angular',
+      description: 'Led the migration of legacy systems to modern .NET Core and Angular frameworks at Techigai. Applied Domain-Driven Design principles and clean architecture patterns. Successfully improved application load times by 40% and enhanced system maintainability. Mentored junior developers throughout the migration process.',
       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop',
-      technologies: ['React', 'D3.js', 'Python', 'FastAPI', 'Redis'],
+      technologies: ['.NET Core', 'Angular', 'Entity Framework', 'Clean Architecture', 'DDD'],
       githubUrl: 'https://github.com',
       liveUrl: 'https://example.com',
       responsibilities: [
-        'Built interactive charts with D3.js',
-        'Implemented data caching with Redis',
-        'Created Python ETL pipelines',
-        'Optimized frontend performance'
+        'Led legacy system migration to .NET Core and Angular',
+        'Applied Domain-Driven Design and clean architecture principles',
+        'Optimized freight charge logic using Entity Framework Core',
+        'Improved application load times by 40%',
+        'Mentored junior developers and established coding standards'
       ]
     },
     {
       id: 4,
-      title: 'Social Media App',
-      summary: 'Modern social networking platform',
-      description: 'Developed a social media platform with features like posts, comments, likes, real-time messaging, and user profiles. Implemented image upload functionality and optimized for mobile devices.',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop',
-      technologies: ['React Native', 'Firebase', 'Node.js', 'CloudFront'],
+      title: 'Medical Visualization Web App',
+      summary: 'Flask-based medical data visualization platform',
+      description: 'Developed a Flask web application for medical data visualization during my internship at Verzeo. The platform helps healthcare professionals make better clinical decisions through interactive data visualization and analysis tools. Built with Python Flask, implemented secure data handling, and created intuitive user interfaces for medical professionals.',
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop',
+      technologies: ['Python', 'Flask', 'Data Visualization', 'Healthcare', 'Analytics'],
       githubUrl: 'https://github.com',
       liveUrl: 'https://example.com',
       responsibilities: [
-        'Built cross-platform mobile app',
-        'Implemented real-time messaging',
-        'Set up image processing pipeline',
-        'Integrated push notifications'
+        'Built Flask web application for medical data visualization',
+        'Implemented secure data handling for healthcare compliance',
+        'Created interactive dashboards for clinical decision-making',
+        'Designed intuitive UI for medical professionals',
+        'Improved clinical decision-making process through data insights'
       ]
     }
   ];
@@ -85,7 +89,7 @@ const Projects = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A showcase of my recent work, demonstrating expertise across 
-            full-stack development, UI/UX design, and modern technologies.
+            full-stack development, microservices architecture, and modern technologies.
           </p>
         </div>
 

@@ -6,68 +6,76 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: 'Senior Full Stack Developer',
-      company: 'TechCorp Solutions',
-      location: 'San Francisco, CA',
-      period: '2022 - Present',
-      description: 'Lead development of scalable web applications serving 100K+ users. Mentor junior developers and architect cloud-native solutions.',
+      title: 'Research Assistant',
+      company: 'University of Central Florida',
+      location: 'Orlando, FL',
+      period: 'Jan 2025 - May 2025',
+      description: 'Working on advanced research projects integrating modern web technologies with data visualization and real-time systems.',
       achievements: [
-        'Reduced application load time by 40% through optimization',
-        'Led migration to microservices architecture',
-        'Mentored 5+ junior developers',
-        'Implemented CI/CD pipelines reducing deployment time by 60%'
+        'Integrated RESTful and GraphQL APIs with React for real-time dashboards',
+        'Collaborated on UI/UX iterations achieving 95% positive user feedback',
+        'Developed responsive data visualization components',
+        'Contributed to research publications on web technology integration'
       ],
-      technologies: ['React', 'Node.js', 'AWS', 'Docker', 'PostgreSQL'],
-      logo: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=60&h=60&fit=crop'
+      technologies: ['React.js', 'GraphQL', 'RESTful APIs', 'Data Visualization'],
+      logo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop'
     },
     {
       id: 2,
-      title: 'Full Stack Developer',
-      company: 'StartupXYZ',
-      location: 'Austin, TX',
-      period: '2020 - 2022',
-      description: 'Built and maintained multiple client-facing applications. Collaborated with design team to implement pixel-perfect UIs.',
+      title: 'Software Engineer',
+      company: 'Techigai',
+      location: 'Remote',
+      period: 'Apr 2022 - Dec 2023',
+      description: 'Led development of enterprise-scale applications and mentored junior developers in modern software development practices.',
       achievements: [
-        'Developed 3 major features that increased user engagement by 25%',
-        'Integrated payment systems processing $2M+ annually',
-        'Built responsive web applications for mobile and desktop',
-        'Collaborated with cross-functional teams in Agile environment'
+        'Migrated legacy systems to .NET Core and Angular, improving load times by 40%',
+        'Built scalable APIs using Domain-Driven Design and clean architecture',
+        'Optimized freight charge logic using Entity Framework Core',
+        'Mentored 3+ junior developers and established coding standards',
+        'Automated HR operations using background services and SMTP integration'
       ],
-      technologies: ['React', 'Express.js', 'MongoDB', 'Stripe', 'Heroku'],
-      logo: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=60&h=60&fit=crop'
+      technologies: ['.NET Core', 'Angular', 'Entity Framework', 'Clean Architecture', 'Azure'],
+      logo: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=60&h=60&fit=crop'
     },
     {
       id: 3,
-      title: 'Frontend Developer',
-      company: 'Digital Agency Pro',
+      title: 'Associate Software Engineer',
+      company: 'Techigai',
       location: 'Remote',
-      period: '2019 - 2020',
-      description: 'Specialized in creating high-performance frontend applications. Worked with multiple clients across various industries.',
+      period: 'Jan 2021 - Apr 2022',
+      description: 'Focused on building secure, scalable systems and implementing modern authentication mechanisms for enterprise applications.',
       achievements: [
-        'Delivered 15+ client projects on time and within budget',
-        'Improved website performance scores by average 35%',
-        'Implemented modern CSS frameworks and design systems',
-        'Created reusable component libraries'
+        'Designed secure batch processing systems for high-volume APIs',
+        'Implemented OAuth 2.0 authentication and authorization',
+        'Reduced support workload by building intelligent HR chatbot',
+        'Improved UI performance by 25% through Redux state optimization',
+        'Collaborated with cross-functional teams in Agile environment'
       ],
-      technologies: ['React', 'Vue.js', 'SASS', 'Webpack', 'Figma'],
-      logo: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=60&h=60&fit=crop'
+      technologies: ['C#', 'OAuth 2.0', 'Redux', 'API Development', 'Chatbot'],
+      logo: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=60&h=60&fit=crop'
     },
     {
       id: 4,
-      title: 'Junior Web Developer',
-      company: 'Local Web Studio',
-      location: 'Denver, CO',
-      period: '2018 - 2019',
-      description: 'Started my professional journey building websites for small businesses. Gained experience in full-stack development.',
+      title: 'Software Development Intern',
+      company: 'Verzeo',
+      location: 'Remote',
+      period: 'Apr 2020 - Jul 2020',
+      description: 'Gained hands-on experience in web development and data visualization for healthcare applications.',
       achievements: [
-        'Built 20+ responsive websites from scratch',
-        'Learned modern JavaScript frameworks and tools',
-        'Collaborated with designers to implement custom designs',
-        'Provided technical support and maintenance'
+        'Built Flask web application for medical data visualization',
+        'Improved clinical decision-making through interactive dashboards',
+        'Implemented secure data handling for healthcare compliance',
+        'Created responsive UI components for medical professionals'
       ],
-      technologies: ['HTML/CSS', 'JavaScript', 'PHP', 'WordPress', 'MySQL'],
-      logo: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=60&h=60&fit=crop'
+      technologies: ['Python', 'Flask', 'Data Visualization', 'Healthcare', 'Web Development'],
+      logo: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=60&h=60&fit=crop'
     }
+  ];
+
+  const certifications = [
+    'Career Essentials in GitHub (GitHub)',
+    'Oracle Relational Database Management System',
+    'Docker Foundations Professional Certificate'
   ];
 
   return (
@@ -75,11 +83,11 @@ const Experience = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Work <span className="gradient-text">Experience</span>
+            Professional <span className="gradient-text">Experience</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            My professional journey through various roles, showcasing growth, 
-            achievements, and the impact I've made at each organization.
+            My journey through various roles, showcasing continuous growth, 
+            technical achievements, and leadership in software development.
           </p>
         </div>
 
@@ -118,7 +126,6 @@ const Experience = () => {
                             <p className="text-primary font-medium">{experience.company}</p>
                           </div>
                         </div>
-                        <ExternalLink className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
                       </div>
 
                       {/* Meta info */}
@@ -166,6 +173,24 @@ const Experience = () => {
                   </Card>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Certifications Section */}
+        <div className="mt-20">
+          <h3 className="text-2xl font-semibold mb-8 text-center">Certifications</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {certifications.map((cert, index) => (
+              <Card 
+                key={cert} 
+                className="card-hover bg-card/50 backdrop-blur animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardContent className="p-6 text-center">
+                  <h4 className="font-semibold text-primary">{cert}</h4>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>

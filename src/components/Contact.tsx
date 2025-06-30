@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Download } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -51,23 +51,31 @@ const Contact = () => {
     }
   };
 
+  const downloadResume = () => {
+    // Create a mock PDF download - replace with actual resume file
+    const link = document.createElement('a');
+    link.href = '#'; // Replace with actual PDF URL
+    link.download = 'Subhash_Devulapalli_Resume.pdf';
+    link.click();
+  };
+
   const contactInfo = [
     {
       icon: Mail,
       label: 'Email',
-      value: 'john@example.com',
-      href: 'mailto:john@example.com',
+      value: 'subhash.devulapalli14@gmail.com',
+      href: 'mailto:subhash.devulapalli14@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      value: '407-448-8727',
+      href: 'tel:+14074488727',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Dallas, TX',
       href: null,
     },
   ];
@@ -76,20 +84,14 @@ const Contact = () => {
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com',
+      href: 'https://github.com/subhash-devulapalli',
       color: 'hover:text-gray-700 dark:hover:text-gray-300',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com',
+      href: 'https://www.linkedin.com/in/subhash-devulapalli',
       color: 'hover:text-blue-600',
-    },
-    {
-      icon: Twitter,
-      label: 'Twitter',
-      href: 'https://twitter.com',
-      color: 'hover:text-blue-400',
     },
   ];
 
@@ -112,9 +114,9 @@ const Contact = () => {
             <div className="animate-slide-in-left">
               <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Whether you have a project in mind, want to discuss potential opportunities, 
-                or just want to say hello, I'd love to hear from you. Feel free to reach out 
-                through any of the channels below or use the contact form.
+                Currently pursuing my Master's in Computer Science at UCF while actively seeking 
+                opportunities in software engineering. I'm passionate about building scalable applications 
+                and would love to discuss potential collaborations or job opportunities.
               </p>
 
               <div className="space-y-4">
@@ -140,9 +142,20 @@ const Contact = () => {
                 ))}
               </div>
 
+              {/* Resume Download */}
+              <div className="pt-6">
+                <Button
+                  onClick={downloadResume}
+                  className="w-full sm:w-auto hover-scale bg-primary hover:bg-primary/90"
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  Download Resume
+                </Button>
+              </div>
+
               {/* Social Links */}
               <div className="pt-8">
-                <p className="font-medium mb-4">Follow me on social media:</p>
+                <p className="font-medium mb-4">Connect with me:</p>
                 <div className="flex space-x-4">
                   {socialLinks.map((social) => (
                     <a
@@ -214,7 +227,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    placeholder="Tell me about your project or inquiry..."
+                    placeholder="Tell me about your project or opportunity..."
                     rows={6}
                     className="bg-background/50 resize-none"
                   />
