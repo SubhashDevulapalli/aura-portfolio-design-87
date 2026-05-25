@@ -1,157 +1,149 @@
-
-import { Code, Database, Globe, Smartphone, Zap, Users } from 'lucide-react';
+import { Code2, Database, Cloud, Globe, Zap, Users, Server, Layers } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 const About = () => {
-  const skills = [
-    { name: 'C# / .NET', level: 95, color: 'bg-purple-500' },
-    { name: 'React.js', level: 90, color: 'bg-blue-500' },
-    { name: 'Node.js', level: 85, color: 'bg-green-500' },
-    { name: 'Python', level: 80, color: 'bg-yellow-500' },
-    { name: 'Azure', level: 85, color: 'bg-blue-600' },
-    { name: 'SQL Server', level: 90, color: 'bg-orange-500' },
-  ];
-
-  const techStack = [
-    { category: 'Languages', items: ['C#', 'Java', 'Python', 'JavaScript', 'TypeScript'] },
-    { category: 'Frameworks', items: ['ASP.NET Core', 'React.js', 'Angular', 'Node.js', 'MVC'] },
-    { category: 'Databases', items: ['SQL Server', 'PostgreSQL', 'MongoDB', 'T-SQL'] },
-    { category: 'Tools & Cloud', items: ['Azure', 'Docker', 'Git', 'CI/CD', 'Postman'] },
+  const skillCategories = [
+    {
+      title: 'Backend',
+      icon: Server,
+      color: 'text-blue-400',
+      bg: 'bg-blue-500/10',
+      skills: ['ASP.NET Core', '.NET Framework', 'ML.NET', 'Entity Framework Core', 'Node.js', 'SignalR'],
+    },
+    {
+      title: 'Frontend',
+      icon: Globe,
+      color: 'text-cyan-400',
+      bg: 'bg-cyan-500/10',
+      skills: ['React.js', 'Angular', 'Redux', 'Blazor', 'Bootstrap', 'TypeScript', 'JavaScript'],
+    },
+    {
+      title: 'Database',
+      icon: Database,
+      color: 'text-purple-400',
+      bg: 'bg-purple-500/10',
+      skills: ['MS SQL Server', 'T-SQL', 'Stored Procedures', 'Indexing', 'MongoDB', 'MySQL', 'Redis', 'GraphQL'],
+    },
+    {
+      title: 'Cloud & DevOps',
+      icon: Cloud,
+      color: 'text-green-400',
+      bg: 'bg-green-500/10',
+      skills: ['Azure (Service Bus, Functions, SQL DB)', 'AWS', 'Docker', 'Kubernetes', 'Jenkins', 'CI/CD'],
+    },
+    {
+      title: 'Languages',
+      icon: Code2,
+      color: 'text-orange-400',
+      bg: 'bg-orange-500/10',
+      skills: ['C#', 'Java', 'Python', 'JavaScript', 'TypeScript'],
+    },
+    {
+      title: 'Tools & Practices',
+      icon: Layers,
+      color: 'text-pink-400',
+      bg: 'bg-pink-500/10',
+      skills: ['Git', 'Postman', 'Visual Studio', 'xUnit', 'NUnit', 'TDD', 'Agile/Scrum', 'Confluence'],
+    },
   ];
 
   const highlights = [
     {
-      icon: Code,
-      title: 'Full-Stack Development',
-      description: 'Expert in building scalable web applications using modern frameworks',
-    },
-    {
-      icon: Globe,
-      title: 'Cloud Architecture',
-      description: 'Experienced with Azure services and containerization with Docker',
-    },
-    {
-      icon: Database,
-      title: 'Database Design',
-      description: 'Proficient in designing efficient database systems and optimization',
-    },
-    {
-      icon: Smartphone,
-      title: 'API Development',
-      description: 'Building robust RESTful and GraphQL APIs with clean architecture',
-    },
-    {
       icon: Zap,
-      title: 'Performance Optimization',
-      description: 'Improving application performance and reducing load times significantly',
+      title: '5+ Years Experience',
+      description: 'Built production systems across healthcare, ERP, e-commerce, and academic platforms.',
+      color: 'text-yellow-400',
+      bg: 'bg-yellow-500/10',
+    },
+    {
+      icon: Server,
+      title: 'Full-Stack .NET',
+      description: 'Deep expertise from database queries to React UIs, with a strong foundation in clean architecture.',
+      color: 'text-blue-400',
+      bg: 'bg-blue-500/10',
+    },
+    {
+      icon: Cloud,
+      title: 'Cloud-Native',
+      description: 'Shipped containerized microservices on Azure and AWS, with proper CI/CD and zero-downtime deployments.',
+      color: 'text-green-400',
+      bg: 'bg-green-500/10',
     },
     {
       icon: Users,
-      title: 'Team Leadership',
-      description: 'Mentoring junior developers and collaborating in Agile environments',
+      title: 'Team Player',
+      description: 'Led sprint planning for 12-person engineering teams and mentored junior devs through code reviews.',
+      color: 'text-purple-400',
+      bg: 'bg-purple-500/10',
     },
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 bg-muted/20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             About <span className="gradient-text">Me</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Software Engineer with 4+ years of experience building robust applications
-            and leading development teams. Currently pursuing Master's in Computer Science at UCF.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            I write software that ships, scales, and holds up when it matters most.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Personal Story */}
-          <div className="space-y-6">
-            <div className="animate-slide-in-left">
-              <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Currently pursuing my Master's in Computer Science at the University of Central Florida 
-                with a stellar 3.875 GPA, I bring a unique blend of academic excellence and practical 
-                industry experience to every project I undertake.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                My professional journey includes significant contributions at Techigai, where I successfully 
-                migrated legacy systems to modern .NET Core and Angular frameworks, achieving remarkable 
-                40% improvements in load times. I've built scalable APIs, mentored junior developers, 
-                and automated critical business processes.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                I'm passionate about clean architecture, performance optimization, and creating 
-                innovative solutions that make a real difference. When I'm not coding, I'm exploring 
-                new technologies and contributing to open-source projects.
-              </p>
-            </div>
+        {/* Bio */}
+        <div className="grid lg:grid-cols-5 gap-10 items-start mb-16">
+          <div className="lg:col-span-3 space-y-5 animate-fade-in">
+            <h3 className="text-2xl font-bold">My Story</h3>
+            <p className="text-muted-foreground leading-relaxed text-base">
+              I’m a Full-Stack .NET Engineer with 5+ years of experience designing backend systems, leading Agile teams, and owning delivery end to end. I bring strong technical foundations across .NET, React, Azure, and SQL, but what I value more is understanding <em>why</em> something is being built and making sure it’s built right.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-base">
+              My journey started at Techigai, where I grew from building secure APIs and containerized services to architecting full microservices migrations and leading sprint ceremonies for cross-functional teams. More recently I’ve been at MTM Health, working in a HIPAA-compliant healthcare environment where the stakes are real and the code has to be right.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-base">
+              I completed my Master’s in Computer Science at the University of Central Florida with a 3.9 GPA, which pushed me deeper into GraphQL, performance engineering, and scalable system design. I contribute best to environments that value clean engineering, cross-functional collaboration, and continuous improvement.
+            </p>
           </div>
 
-          {/* Skills Progress */}
-          <div className="animate-slide-in-right">
-            <h3 className="text-2xl font-semibold mb-6">Core Competencies</h3>
-            <div className="space-y-4">
-              {skills.map((skill) => (
-                <div key={skill.name} className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className="font-medium">{skill.name}</span>
-                    <span className="text-muted-foreground">{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-muted rounded-full h-2">
-                    <div
-                      className={`h-2 rounded-full ${skill.color} transition-all duration-1000 ease-out`}
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
+          {/* Highlights */}
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 animate-fade-in">
+            {highlights.map((item) => (
+              <div key={item.title} className={`flex gap-3 p-4 rounded-xl ${item.bg} border border-white/5`}>
+                <div className={`mt-0.5 shrink-0 ${item.color}`}>
+                  <item.icon className="h-5 w-5" />
                 </div>
-              ))}
-            </div>
+                <div>
+                  <h4 className="font-semibold text-sm">{item.title}</h4>
+                  <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Tech Stack */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-center">Technical Stack</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {techStack.map((category) => (
-              <Card key={category.category} className="card-hover bg-card/50 backdrop-blur">
-                <CardContent className="p-6">
-                  <h4 className="font-semibold mb-3 text-primary">{category.category}</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {category.items.map((item) => (
-                      <span
-                        key={item}
-                        className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md"
-                      >
-                        {item}
-                      </span>
+        {/* Skills */}
+        <div>
+          <h3 className="text-2xl font-bold mb-8 text-center">Core Skills</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {skillCategories.map((category) => (
+              <Card key={category.title} className={`card-hover ${category.bg} border border-white/10`}>
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-2.5 mb-4">
+                    <category.icon className={`h-5 w-5 ${category.color}`} />
+                    <h4 className="font-semibold text-sm">{category.title}</h4>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {category.skills.map((skill) => (
+                      <Badge key={skill} variant="secondary" className="text-xs px-2 py-0.5 bg-background/50 text-foreground/80 border border-white/10">
+                        {skill}
+                      </Badge>
                     ))}
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </div>
-
-        {/* Highlights Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {highlights.map((highlight, index) => (
-            <Card
-              key={highlight.title}
-              className="card-hover animate-scale-in bg-card/50 backdrop-blur"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <highlight.icon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="font-semibold mb-2">{highlight.title}</h3>
-                <p className="text-sm text-muted-foreground">{highlight.description}</p>
-              </CardContent>
-            </Card>
-          ))}
         </div>
       </div>
     </section>
