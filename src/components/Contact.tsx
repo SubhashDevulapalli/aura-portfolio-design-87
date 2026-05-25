@@ -1,254 +1,112 @@
-
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Download } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast({
-        title: "Message sent successfully!",
-        description: "I'll get back to you as soon as possible.",
-      });
-      
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
-      toast({
-        title: "Error sending message",
-        description: "Please try again or contact me directly via email.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const downloadResume = () => {
-    // Create a mock PDF download - replace with actual resume file
-    const link = document.createElement('a');
-    link.href = '#'; // Replace with actual PDF URL
-    link.download = 'Subhash_Devulapalli_Resume.pdf';
-    link.click();
-  };
-
-  const contactInfo = [
+  const contactMethods = [
     {
       icon: Mail,
       label: 'Email',
       value: 'subhash.devulapalli14@gmail.com',
       href: 'mailto:subhash.devulapalli14@gmail.com',
+      color: 'text-blue-400',
+      bg: 'bg-blue-500/10',
+      cta: 'Send an email',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '407-448-8727',
+      value: '(407) 448-8727',
       href: 'tel:+14074488727',
-    },
-    {
-      icon: MapPin,
-      label: 'Location',
-      value: 'Dallas, TX',
-      href: null,
-    },
-  ];
-
-  const socialLinks = [
-    {
-      icon: Github,
-      label: 'GitHub',
-      href: 'https://github.com/subhash-devulapalli',
-      color: 'hover:text-gray-700 dark:hover:text-gray-300',
+      color: 'text-green-400',
+      bg: 'bg-green-500/10',
+      cta: 'Give me a call',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/subhash-devulapalli',
-      color: 'hover:text-blue-600',
+      value: 'linkedin.com/in/subhash-devulapalli',
+      href: 'https://linkedin.com/in/subhash-devulapalli',
+      color: 'text-sky-400',
+      bg: 'bg-sky-500/10',
+      cta: 'Connect on LinkedIn',
+    },
+    {
+      icon: Github,
+      label: 'GitHub',
+      value: 'github.com/SubhashDevulapalli',
+      href: 'https://github.com/SubhashDevulapalli',
+      color: 'text-purple-400',
+      bg: 'bg-purple-500/10',
+      cta: 'See my code',
     },
   ];
 
   return (
-    <section id="contact" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section id="contact" className="py-20 bg-muted/20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm always interested in new opportunities and exciting projects. 
-            Let's discuss how we can work together to bring your ideas to life.
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+            I’m actively open to new roles. Whether you have a specific position in mind or just want to connect, reach out and I’ll get back to you quickly.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="animate-slide-in-left">
-              <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Currently pursuing my Master's in Computer Science at UCF while actively seeking 
-                opportunities in software engineering. I'm passionate about building scalable applications 
-                and would love to discuss potential collaborations or job opportunities.
-              </p>
-
-              <div className="space-y-4">
-                {contactInfo.map((info) => (
-                  <div key={info.label} className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                      <info.icon className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-medium">{info.label}</p>
-                      {info.href ? (
-                        <a
-                          href={info.href}
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <p className="text-muted-foreground">{info.value}</p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Resume Download */}
-              <div className="pt-6">
-                <Button
-                  onClick={downloadResume}
-                  className="w-full sm:w-auto hover-scale bg-primary hover:bg-primary/90"
-                >
-                  <Download className="h-4 w-4 mr-2" />
-                  Download Resume
-                </Button>
-              </div>
-
-              {/* Social Links */}
-              <div className="pt-8">
-                <p className="font-medium mb-4">Connect with me:</p>
-                <div className="flex space-x-4">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`w-12 h-12 bg-card hover:bg-primary/10 rounded-full flex items-center justify-center transition-all duration-300 hover-scale ${social.color}`}
-                      aria-label={social.label}
-                    >
-                      <social.icon className="h-5 w-5" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
+        {/* Location */}
+        <div className="flex justify-center mb-10">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/30 border border-white/10 px-4 py-2.5 rounded-full">
+            <MapPin className="h-4 w-4 text-primary" />
+            Dallas, TX — Open to Remote & Hybrid
           </div>
+        </div>
 
-          {/* Contact Form */}
-          <Card className="animate-slide-in-right card-hover bg-card/50 backdrop-blur">
+        {/* Contact cards */}
+        <div className="grid sm:grid-cols-2 gap-4 mb-12">
+          {contactMethods.map((method) => (
+            <a
+              key={method.label}
+              href={method.href}
+              target={method.href.startsWith('http') ? '_blank' : undefined}
+              rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="group"
+            >
+              <Card className="h-full card-hover bg-card/50 border border-white/10 group-hover:border-primary/30 transition-all">
+                <CardContent className="p-5 flex items-start gap-4">
+                  <div className={`p-2.5 rounded-xl ${method.bg} shrink-0 group-hover:scale-110 transition-transform`}>
+                    <method.icon className={`h-5 w-5 ${method.color}`} />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs text-muted-foreground mb-0.5">{method.label}</p>
+                    <p className="text-sm font-medium truncate">{method.value}</p>
+                    <p className={`text-xs mt-1 ${method.color} opacity-0 group-hover:opacity-100 transition-opacity`}>{method.cta} →</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </a>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <Card className="bg-gradient-to-br from-primary/10 to-purple-500/10 border border-primary/20 inline-block w-full max-w-lg">
             <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      placeholder="Your full name"
-                      className="bg-background/50"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      placeholder="your.email@example.com"
-                      className="bg-background/50"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="subject">Subject *</Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="What's this about?"
-                    className="bg-background/50"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message *</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="Tell me about your project or opportunity..."
-                    rows={6}
-                    className="bg-background/50 resize-none"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isLoading}
-                  className="w-full hover-scale bg-primary hover:bg-primary/90"
-                >
-                  {isLoading ? (
-                    'Sending...'
-                  ) : (
-                    <>
-                      <Send className="h-4 w-4 mr-2" />
-                      Send Message
-                    </>
-                  )}
-                </Button>
-              </form>
+              <Send className="h-8 w-8 text-primary mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-2">Ready to talk?</h3>
+              <p className="text-muted-foreground text-sm mb-6">
+                The fastest way to reach me is email. I typically respond within a few hours on weekdays.
+              </p>
+              <Button
+                size="lg"
+                className="w-full max-w-xs bg-primary hover:bg-primary/90"
+                asChild
+              >
+                <a href="mailto:subhash.devulapalli14@gmail.com">
+                  <Mail className="mr-2 h-4 w-4" />
+                  subhash.devulapalli14@gmail.com
+                </a>
+              </Button>
             </CardContent>
           </Card>
         </div>
